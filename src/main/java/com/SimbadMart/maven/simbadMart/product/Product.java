@@ -32,17 +32,23 @@ public class Product {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
     private List<Storage> storage = new ArrayList<>();
 
-//    public void setMessages(List<Storage> storage) {
-//        this.storage = storage;
-//    }
-//
-//    public List<Storage> getMessages() {
-//        return storage;
-//    }
+    public Long getProductID() {
+        return productID;
+    }
 
-//    public Long getId() {
-//        return productID;
-//    }
+    public String getProductType() {
+        return productType;
+    }
 
+    public String getDescription() {
+        return Description;
+    }
 
+    public BigDecimal getProductPrice() {
+        return productPrice;
+    }
+
+    public BigDecimal getUnitCost() {
+        return unitCost;
+    }
 }
