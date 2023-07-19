@@ -1,9 +1,8 @@
-package CompanyOrder;
+package com.SimbadMart.maven.simbadMart.product;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
-public interface CompanyOrderRepository extends JpaRepository<CompanyOrder, Long> {
+public interface ProductRepository extends JpaRepository<Product,Long> {
 }

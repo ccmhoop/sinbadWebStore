@@ -1,8 +1,8 @@
-package products;
+package com.SimbadMart.maven.simbadMart.stock;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductsRepository extends JpaRepository<Products,Long> {
+public interface StockRepository extends JpaRepository <Stock, Long> {
 }

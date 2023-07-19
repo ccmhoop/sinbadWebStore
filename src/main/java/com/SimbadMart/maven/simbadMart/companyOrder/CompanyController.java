@@ -1,8 +1,7 @@
-package CompanyOrder;
+package com.SimbadMart.maven.simbadMart.companyOrder;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import products.Products;
 
 
 @RestController
@@ -13,10 +12,10 @@ public class CompanyController {
     @Autowired
     CompanyOrderRepository companyOrderRepository;
 
-    @PostMapping("save")
-    public void saveCompanyOrder(@RequestBody CompanyOrder companyOrder) {
-        companyOrderRepository.save(companyOrder);
-        System.out.println("Message stored");
-    }
+//    @PostMapping("save")
+//    public void saveCompanyOrder(@RequestBody CompanyOrder companyOrder) {
+//        companyOrderRepository.save(companyOrder);
+//        System.out.println("Message stored");
+//    }
 
 }

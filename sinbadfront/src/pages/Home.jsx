@@ -1,6 +1,7 @@
 import React from "react";
 import homeStore from "../stores/homeStore";
 import ListItem from "../components/ListItem";
+import Header from "../components/Header";
 
 export default function Home() {
   const store = homeStore()
@@ -11,6 +12,7 @@ export default function Home() {
 
   return (
     <>
+    <Header/>
       <div>
         Home test test{" "}
         {store.products.map((product) => {
