@@ -1,6 +1,7 @@
 package com.SimbadMart.maven.simbadMart.product;
 
-import com.SimbadMart.maven.simbadMart.companyOrder.CompanyOrder;
+import com.SimbadMart.maven.simbadMart.storage.Storage;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -13,20 +14,21 @@ public class Product {
     @GeneratedValue
     Long productID;
 
+
     String productType;
 
     Product(){
     }
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
-    private List<CompanyOrder> companyOrder = new ArrayList<>();
+    private List<Storage> storage = new ArrayList<>();
 
-//    public void setMessages(List<CompanyOrder> companyOrder) {
-//        this.companyOrder = companyOrder;
+//    public void setMessages(List<Storage> storage) {
+//        this.storage = storage;
 //    }
 //
-//    public List<CompanyOrder> getMessages() {
-//        return companyOrder;
+//    public List<Storage> getMessages() {
+//        return storage;
 //    }
 
 //    public Long getId() {
