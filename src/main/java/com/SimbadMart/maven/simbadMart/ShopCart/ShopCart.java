@@ -5,15 +5,13 @@ import com.SimbadMart.maven.simbadMart.storage.Storage;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 public class ShopCart {
     @Id
     @GeneratedValue
     Long ShopCartID;
 
+    int amount;
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "storageid", nullable = false)
@@ -25,6 +23,12 @@ public class ShopCart {
     private Customer customer;
 
     public ShopCart() {
+    }
+
+    public ShopCart(int amount, Storage storage, Customer customer) {
+        this.amount = amount;
+        this.storage = storage;
+        this.customer = customer;
     }
 
     public Customer getCustomer(){

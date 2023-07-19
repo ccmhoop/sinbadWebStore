@@ -13,8 +13,9 @@ public class Storage {
     @Id
     @GeneratedValue
     Long StorageID;
+    int amount;
 
-    String amount;
+
 
     Storage(){
     }
@@ -34,7 +35,7 @@ public class Storage {
     public void setProduct(Product product) {
         this.product = product;
     }
-    public void setAmount(String amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
