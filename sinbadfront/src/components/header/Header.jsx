@@ -1,14 +1,15 @@
 import React from "react";
+import { FaShoppingBasket } from "react-icons/fa";
 import "./header.scss";
 
 export default function Header() {
   return (
     <header className="header">
       <div className="logo">Logo</div>
-      <div className="search-bar">
-        <input type="text" placeholder="Please search" />
+      <div className="title">title</div>
+      <div className="shop-cart">
+        <FaShoppingBasket />
       </div>
-      <div className="shop-cart">Shop cart</div>
     </header>
   );
 }
