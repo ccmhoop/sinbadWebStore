@@ -1,9 +1,21 @@
-$darkPurple: #6528f7;
-$backgroundColor: white;
-$mainColor: #a076f9;
-$textColor: black;
 
-* {
-  margin: 0;
-  padding: 0;
+$darkPurple : #6528F7;
+$backgroundColor : white;
+$mainColor : #A076F9;
+$textColor : black;
+$radius: 1rem;
+$gold: #FFD700;
+
+*{
+    background-color: $backgroundColor ;
+    margin: 0;
+    padding: 0;
 }
+
+.app{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
