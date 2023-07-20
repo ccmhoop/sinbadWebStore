@@ -1,7 +1,6 @@
 package com.SimbadMart.maven.simbadMart.product;
 
 import com.SimbadMart.maven.simbadMart.storage.Storage;
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -15,18 +14,20 @@ public class Product {
     @GeneratedValue
     Long productID;
     String productType;
-    String Description;
+    String category;
+    String description;
     BigDecimal productPrice;
     BigDecimal unitCost;
 
     Product(){
     }
 
-    public Product(String productType, String description, BigDecimal productPrice, BigDecimal unitCost) {
+    public Product(String productType, String description, BigDecimal productPrice, String category, BigDecimal unitCost) {
         this.productType = productType;
-        Description = description;
+        this.description = description;
         this.productPrice = productPrice;
         this.unitCost = unitCost;
+        this.category = category;
     }
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
@@ -41,7 +42,7 @@ public class Product {
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public BigDecimal getProductPrice() {
