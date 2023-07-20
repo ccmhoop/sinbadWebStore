@@ -4,7 +4,7 @@ import ListItem from "../components/ListItem";
 import Header from "../components/Header";
 
 export default function Home() {
-  const store = homeStore()
+  const store = homeStore();
 
   React.useEffect(() => {
     store.fetchHomeProducts();
@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-    <Header/>
+      <Header />
       <div>
         Home test test{" "}
         {store.products.map((product) => {

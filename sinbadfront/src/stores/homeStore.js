@@ -14,7 +14,6 @@ const homeStore = create((set) => ({
 
     console.log(sinbadproducts);
 
-    
     const products = homeProducts.data.coins.map((product) => {
       return {
         name: product.item.name,
