@@ -1,10 +1,21 @@
+
 $darkPurple : #6528F7;
 $backgroundColor : white;
 $mainColor : #A076F9;
 $textColor : black;
-
+$radius: 1rem;
+$gold: #FFD700;
 
 *{
+    background-color: $backgroundColor ;
     margin: 0;
     padding: 0;
 }
+
+.app{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+

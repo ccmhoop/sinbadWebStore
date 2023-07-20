@@ -1,0 +1,85 @@
+@import 'mainSheet';
+
+span{
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: gold ;
+}
+.home-page{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 90em;
+    border: solid blue;
+}
+
+.box-style{
+    margin-top: 2rem;
+    margin-right: 2rem;
+    border: .4rem outset $gold;
+    background: linear-gradient(
+      135deg,
+      rgba(101, 40, 247, 1) 0%,
+      rgba(160, 118, 249, 1) 100%
+    );
+    box-shadow: inset 0rem 0rem 1rem .3rem rgba(255, 215, 0, 0.2);
+}
+
+.sales-container{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.sales-box{
+    width: 30rem;
+    height: 20rem;
+}
+
+.extra-container{
+    display: flex;
+    width: 100%;
+}
+
+.extra{
+    height: 15rem;
+    width: 50rem;
+}
+
+.product-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 100%;
+}
+
+.product-box{
+    background-color: $mainColor;
+    width: 20rem;
+    height: 20rem;
+    margin: .5rem;
+}
+
+.categories-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.categories-box{
+    width: 14rem;
+    height: 8rem;
+}
+
+
+
+
