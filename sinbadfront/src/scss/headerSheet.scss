@@ -1,5 +1,31 @@
-@import 'mainSheet';        
+@import "mainSheet";
 
-*{
+$logoWidth: 100px;
+$searchBarWidth: 300px;
+$cartWidth: 50px;
 
+.header {
+  display: grid;
+  position: sticky;
+  height: 10vh;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-gap: 10px;
+  align-items: center;
+  padding: 1rem;
+  background-color: #a076f9;
+}
+
+.logo {
+  justify-self: start;
+  width: $logoWidth;
+}
+
+.search-bar {
+  justify-self: center;
+  width: $searchBarWidth;
+}
+
+.shopping-cart {
+  justify-self: end;
+  width: $cartWidth;
 }
