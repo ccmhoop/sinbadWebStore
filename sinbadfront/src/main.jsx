@@ -9,10 +9,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route index element={<Home />} />
-      {/* <Route index element={<Products />} /> */}
-      <Route path="/products" element={<Products/>} />
-      {/* <Route path="/Shopcart" element={<ShopCart />} /> */}
+      <Route index element={<Home/>}/>
+      <Route path="/products" element={<Products/>}/>
+      {/* <Route path="/shopcart" element={<ShopCart />}/> */}
     </Routes>
   </BrowserRouter>
 );

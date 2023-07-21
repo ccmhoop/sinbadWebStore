@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams,useLocation } from "react-router-dom";
-import homeStore from "../stores/homeStore";
+import productStore from "../stores/productStore";
 import Header from "../components/Header";
 import ListProduct from "../components/ListProduct";
 import Footer from "../components/Footer";
@@ -12,13 +12,13 @@ import "../scss/products-pageSheet.scss";
 export default function Products() {
 
   const location = useLocation();
-  const category = location.state?.category;
+  const search = location.state?.search;
 
-  const store = homeStore();
+  const store = productStore();
 
 
   React.useEffect(() => {
-    store.fetchHomeProducts();
+    store.fetchProducts();
   }, []);
 
   return (
@@ -33,7 +33,7 @@ export default function Products() {
             {store.products.map((product) => {
               return (
                 <div key={product.id}>
-                  <ListProduct key={product.id} product={product} category={category} />
+                  <ListProduct key={product.id} product={product} search={search} />
                 </div>
               );
             })}

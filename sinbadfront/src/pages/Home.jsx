@@ -3,8 +3,7 @@ import homeStore from "../stores/homeStore";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import StickyBar from "../components/StickyBar";
-import setCategories from "./Products";
-import { Link, Navigate  } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../scss/homeSheet.scss";
 
 export default function Home() {
@@ -32,14 +31,14 @@ export default function Home() {
           </div>
           <span>Categories</span>
           <div className="home-categories-container">
-            <Link to="/products" state={{ category: "Fruits" }}><div className="home-categories-box home-box-style">Fruits</div></Link>   
-            <Link to="/products" state={{ category: "Vegetables" }}><div className="home-categories-box home-box-style">Vegetables</div></Link>   
-            <Link to="/products" state={{ category: "Dairy" }}><div className="home-categories-box home-box-style">Dairy</div></Link>
-            <Link to="/products" state={{ category: "Breakfast" }}><div className="home-categories-box home-box-style">Breakfast</div></Link>
-            <Link to="/products" state={{ category: "Beverages" }}><div className="home-categories-box home-box-style">Beverages</div></Link>       
-            <Link to="/products" state={{ category: "Pantry" }}><div className="home-categories-box home-box-style">Pantry</div></Link>   
-            <Link to="/products" state={{ category: "Meat" }}><div className="home-categories-box home-box-style">Meat</div></Link>   
-            <Link to="/products" state={{ category: "Seafood" }}><div className="home-categories-box home-box-style">Seafood</div></Link>   
+            <Link to="/products" state={{ search: "Fruits" }}><div className="home-categories-box home-box-style">Fruits</div></Link>   
+            <Link to="/products" state={{ search: "Vegetables" }}><div className="home-categories-box home-box-style">Vegetables</div></Link>   
+            <Link to="/products" state={{ search: "Dairy" }}><div className="home-categories-box home-box-style">Dairy</div></Link>
+            <Link to="/products" state={{ search: "Breakfast" }}><div className="home-categories-box home-box-style">Breakfast</div></Link>
+            <Link to="/products" state={{ search: "Beverages" }}><div className="home-categories-box home-box-style">Beverages</div></Link>       
+            <Link to="/products" state={{ search: "Pantry" }}><div className="home-categories-box home-box-style">Pantry</div></Link>   
+            <Link to="/products" state={{ search: "Meat" }}><div className="home-categories-box home-box-style">Meat</div></Link>   
+            <Link to="/products" state={{ search: "Seafood" }}><div className="home-categories-box home-box-style">Seafood</div></Link>   
             </div>
           </div>
         <Footer/>

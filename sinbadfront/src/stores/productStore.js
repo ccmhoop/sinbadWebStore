@@ -1,5 +1,7 @@
 import axios from "axios";
 import { create } from "zustand";
+import debounce from "../helpers/debounce";
+
 
 const productStore = create((set) => ({
   products: [],
@@ -24,4 +26,4 @@ const productStore = create((set) => ({
   },
 }));
 
-export default homeStore;
+export default productStore;
