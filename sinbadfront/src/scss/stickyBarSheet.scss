@@ -2,43 +2,34 @@
 
 
 .sticky-container{
+    position:sticky;
     display: flex;
+    top: 0vh;
     width: 100%;
-    height: 6rem;
-    border: red solid;
+    height: 5vh;
     align-items: center;
     justify-content: center;
-}
-.sticky-grid{
-    display: grid;
-    background: $mainColor; 
-    width: 100%;
-    grid-template-columns: 2fr 6fr 2fr; 
-    // grid-auto-rows: minmax(100%, auto);
-    grid-template-rows: 1fr 2fr 3fr;
-    grid-template-areas: 
-        "iem1 item2 item3";
-        // margin-bottom: 1rem;
+    background-color: $mainColor;
+    border-bottom: $gold solid;
+    border-top: solid $gold;
+    z-index: 0;
+    box-shadow: 0 .3rem .2rem 0px rgba(248, 170, 3, 0.205);
 }
 
 .sticky-homelogo{
-    grid-area: item1;
     width: 4rem;
     height: 4rem;
-    border: red solid;
 }
 
 .sticky-search{
-    grid-area: item2;
-    height: 3rem;
+    height: 1.5rem;
     width: 20em;
-    border: red solid;
+    border: $gold solid .15rem;
+    background-color: #bea1fd;
 }
 .sticky-shopcart{
-    grid-area: item3;
     width: 4rem;
     height: 4rem;
-    border: red solid;
 }
 
 

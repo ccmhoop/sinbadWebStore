@@ -22,7 +22,7 @@ public class Product {
     Product(){
     }
 
-    public Product(String productType, String description, BigDecimal productPrice, String category, BigDecimal unitCost) {
+    public Product(String productType, String category, BigDecimal productPrice, String description, BigDecimal unitCost) {
         this.productType = productType;
         this.description = description;
         this.productPrice = productPrice;
@@ -51,5 +51,9 @@ public class Product {
 
     public BigDecimal getUnitCost() {
         return unitCost;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

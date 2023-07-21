@@ -1,3 +1,5 @@
+// @import 'homeSheet';
+
 
 $darkPurple : #6528F7;
 $backgroundColor : white;
@@ -7,13 +9,12 @@ $radius: 1rem;
 $gold: #FFD700;
 
 *{
-    background-color: $backgroundColor ;
     margin: 0;
     padding: 0;
 }
 
 .app{
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
 }
