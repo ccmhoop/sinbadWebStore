@@ -1,13 +1,11 @@
 import React from "react";
-import { useParams,useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import productStore from "../stores/productStore";
 import Header from "../components/Header";
 import ListProduct from "../components/ListProduct";
 import Footer from "../components/Footer";
 import StickyBar from "../components/StickyBar";
 import "../scss/products-pageSheet.scss";
-
-
 
 export default function Products() {
 
@@ -31,9 +29,9 @@ export default function Products() {
         <div className="products-category-tab">aaa</div>
           <div className="products-flex">
             {store.products.map((product) => {
-              return (
+              return (   
                 <div key={product.id}>
-                  <ListProduct key={product.id} product={product} search={search} />
+                  <ListProduct product={product} search={search} />
                 </div>
               );
             })}

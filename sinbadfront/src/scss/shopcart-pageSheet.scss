@@ -1,0 +1,106 @@
+@import 'mainSheet';
+
+.shopcart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  // border: red solid;
+  width: 90em;
+  margin: auto;
+}
+
+.shopCart-boxlist {
+  display: flex;
+  // border: rgb(0, 255, 4) solid;
+  width: 60em;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.shopcart-item-bar {
+  display: grid;
+  grid-template-areas: 
+  "item price";
+  grid-template-columns:
+  7fr 3fr
+  ;
+  border: .4rem outset $gold;
+  border-radius: 1rem;
+  background: linear-gradient(135deg,
+      rgba(101, 40, 247, 1) 0%,
+      rgba(160, 118, 249, 1) 100%);
+  box-shadow: inset 0rem 0rem 1rem .3rem rgba(255, 215, 0, 0.2);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+  color: gold;
+  height: 3rem;
+  width: 40rem;
+}
+
+.shopcart-product-name {
+  grid-area: item;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: auto;
+  height: 2rem;
+}
+
+.shopcart-item-price {
+  grid-area: price;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  width: auto;
+  height: 2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  border: gold solid .1rem;
+  background-color:rgba(160, 118, 249, 1) ;
+}
+
+.shopcart-min-item,.shopcart-plus-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 100%;
+  background-color: $mainColor;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: gold solid;
+  color: gold;
+  font-size: 2em;
+  margin-left: .6rem;
+  margin-right:.6rem;
+}
+.shopcart-min-item{
+  margin-left: 3rem;
+}
+
+.shopcart-item-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 2.5em;
+  height: 2.5em;
+  border: gold solid;
+  box-shadow: inset 0rem 0rem .2rem .3rem rgba(255, 215, 0, 0.2);
+  background-color: rgba(160, 118, 249, 1);
+}
+
+.shopcart-min-item:hover,.shopcart-plus-item:hover{
+  box-shadow: inset 0rem 0rem .2rem .3rem rgba(255, 215, 0, 0.2);
+}
+
+.shopcart-min-item:active,.shopcart-plus-item:active{
+  scale: 80%;
+}
+
+

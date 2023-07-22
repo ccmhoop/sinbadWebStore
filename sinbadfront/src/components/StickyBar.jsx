@@ -14,8 +14,7 @@ export default function StickyBar() {
       <input className="sticky-search" type="text" value={query} onChange={updateQuery} onKeyDown={(e)=>{if(e.code==="Enter"){
         navigate("/products",{state:{search: query }});
       }}}/>
-
-      {/* <Link to="/products" state ={{ search: "" }}><FaShoppingBasket /></Link>  */}
+      <Link to="/shopcart" state ={{ search: "" }}><FaShoppingBasket /></Link> 
     </div>
   );
 }

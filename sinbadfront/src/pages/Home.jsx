@@ -32,13 +32,16 @@ export default function Home() {
           <span>Categories</span>
           <div className="home-categories-container">
             <Link to="/products" state={{ search: "Fruits" }}><div className="home-categories-box home-box-style">Fruits</div></Link>   
-            <Link to="/products" state={{ search: "Vegetables" }}><div className="home-categories-box home-box-style">Vegetables</div></Link>   
+            <Link to="/products" state={{ search: "Vegetables" }}><div className="home-categories-box home-box-style">Vegetables</div></Link> 
+            <Link to="/products" state={{ search: "Bakery" }}><div className="home-categories-box home-box-style">Bakery</div></Link>    
+            <Link to="/products" state={{ search: "Snacks" }}><div className="home-categories-box home-box-style">Snacks</div></Link>  
             <Link to="/products" state={{ search: "Dairy" }}><div className="home-categories-box home-box-style">Dairy</div></Link>
+            <Link to="/products" state={{ search: "Personal Care" }}><div className="home-categories-box home-box-style">Personal Care</div></Link>
             <Link to="/products" state={{ search: "Breakfast" }}><div className="home-categories-box home-box-style">Breakfast</div></Link>
             <Link to="/products" state={{ search: "Beverages" }}><div className="home-categories-box home-box-style">Beverages</div></Link>       
             <Link to="/products" state={{ search: "Pantry" }}><div className="home-categories-box home-box-style">Pantry</div></Link>   
             <Link to="/products" state={{ search: "Meat" }}><div className="home-categories-box home-box-style">Meat</div></Link>   
-            <Link to="/products" state={{ search: "Seafood" }}><div className="home-categories-box home-box-style">Seafood</div></Link>   
+            <Link to="/products" state={{ search: "Seafood" }}><div className="home-categories-box home-box-style">Seafood</div></Link> 
             </div>
           </div>
         <Footer/>
