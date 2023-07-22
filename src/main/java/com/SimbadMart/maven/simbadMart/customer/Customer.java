@@ -2,7 +2,9 @@ package com.SimbadMart.maven.simbadMart.customer;
 
 import com.SimbadMart.maven.simbadMart.ShopCart.ShopCart;
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,12 +12,16 @@ import java.util.List;
 public class Customer {
     @Id
     @GeneratedValue
-    Long Id;
-    String customerName;
-    String customerSurname;
-    String e_mail;
-    String address;
-    int phone;
+    private Long Id;
+    private String customerName;
+    private String customerSurname;
+    private String eMail;
+    private String address;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dateOfBirth;
+    private String phone;
+    private String password;
+
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
     private List<ShopCart> shopCart = new ArrayList<>();
@@ -23,13 +29,23 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String customerName, String customerSurname, String e_mail, String address, int phone, List<ShopCart> shopCart) {
+    public Customer(String customerName, String customerSurname, String eMail, String address, LocalDate dateOfBirth, String phone, List<ShopCart> shopCart, String password) {
         this.customerName = customerName;
         this.customerSurname = customerSurname;
-        this.e_mail = e_mail;
+        this.eMail = eMail;
         this.address = address;
+        this.dateOfBirth = dateOfBirth;
         this.phone = phone;
         this.shopCart = shopCart;
+        this.password = password;
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
     public String getCustomerName() {
@@ -40,17 +56,22 @@ public class Customer {
         return customerSurname;
     }
 
-    public String getE_mail() {
-        return e_mail;
+    public String geteMail() {
+        return eMail;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
     public List<ShopCart> getShopCart() {
         return shopCart;
     }
