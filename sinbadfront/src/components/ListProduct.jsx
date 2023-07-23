@@ -1,11 +1,12 @@
 import "../scss/products-pageSheet.scss";
 import { FaCartPlus } from "react-icons/fa";
-import { addToCart } from "../stores/shoppingCart";
+import { addToCart , viewPrice } from "../stores/shoppingCart";
 
 function lister(product) {
-  
+  const raiseTotal = viewPrice((state) => state.raiseTotal);
   const addItem = (id, name, price) => {
-    addToCart(id, name, price);
+    addToCart(id, name, price,price);
+    raiseTotal(price);
   };
 
   return (

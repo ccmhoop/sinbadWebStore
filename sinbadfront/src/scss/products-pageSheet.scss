@@ -20,7 +20,8 @@ span{
   grid-template-columns: repeat(auto-fill);  
   overflow: hidden;
   width: 90rem;
-  height: 70rem;
+  // height: 70rem;
+  height: fit-content;
   margin-bottom: 1rem;
   // border: red solid;
   padding: 0;
@@ -29,14 +30,27 @@ span{
 .products-category-tab{
   grid-area: category;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
   width: 10rem;
   height: 100%;
-  border-right: gold solid;
-  background-color: $mainColor;
+  // border-right: gold solid;
+  // background-color: $mainColor;
   margin-right: 1em;
+}
 
+.product-category{
+display: flex;
+border-bottom: gold solid;
+width: 10rem;
+height: 4rem;
+align-items:center;
+justify-content: center;
+font-weight:900;
+font-size: 1.3em;
+color: $darkPurple;
+text-shadow: 0 0 .1em gold, 0 0 .1em gold;
 }
 
 .products-flex{

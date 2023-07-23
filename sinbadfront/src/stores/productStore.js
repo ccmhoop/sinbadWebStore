@@ -18,6 +18,7 @@ const productStore = create((set) => ({
         category: product.category,
         description: product.description,
         price: product.productPrice,
+        total: product.productPrice,
         id: product.productID,
       };
     });
@@ -25,5 +26,11 @@ const productStore = create((set) => ({
     set({ products });
   },
 }));
+
+
+
+
+
+
 
 export default productStore;
