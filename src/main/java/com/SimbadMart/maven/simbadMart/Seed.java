@@ -1,5 +1,9 @@
 package com.SimbadMart.maven.simbadMart;
 
+import com.SimbadMart.maven.simbadMart.customer.Customer;
+import com.SimbadMart.maven.simbadMart.customer.CustomerController;
+import com.SimbadMart.maven.simbadMart.customer.CustomerRepository;
+import com.SimbadMart.maven.simbadMart.customer.UserRole;
 import com.SimbadMart.maven.simbadMart.product.Product;
 import com.SimbadMart.maven.simbadMart.product.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +11,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,10 +21,14 @@ public class Seed implements CommandLineRunner {
     @Autowired
     ProductRepository productRepository;
 
+    @Autowired
+    CustomerRepository customerRepository;
+
     @Override
     public void run(String... args) throws Exception {
         seedProduct();
     }
+
 
     public void seedProduct() {
         List<Product> products = new ArrayList<>();

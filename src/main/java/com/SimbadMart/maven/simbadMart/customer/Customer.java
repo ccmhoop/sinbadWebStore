@@ -17,6 +17,8 @@ public class Customer {
     private String customerSurname;
     private String eMail;
     private String address;
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
     private String phone;
@@ -29,15 +31,17 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String customerName, String customerSurname, String eMail, String address, LocalDate dateOfBirth, String phone, List<ShopCart> shopCart, String password) {
+    public Customer(String customerName, String customerSurname, String eMail, String address, UserRole role, LocalDate dateOfBirth, String phone, String password, int timesOrdered, List<ShopCart> shopCart) {
         this.customerName = customerName;
         this.customerSurname = customerSurname;
         this.eMail = eMail;
         this.address = address;
+        this.role = role;
         this.dateOfBirth = dateOfBirth;
         this.phone = phone;
-        this.shopCart = shopCart;
         this.password = password;
+        this.timesOrdered = timesOrdered;
+        this.shopCart = shopCart;
     }
 
     public int getTimesOrdered() {
@@ -82,5 +86,9 @@ public class Customer {
 
     public List<ShopCart> getShopCart() {
         return shopCart;
+    }
+
+    public UserRole getRole() {
+        return role;
     }
 }

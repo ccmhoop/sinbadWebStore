@@ -26,6 +26,7 @@ public class Storage {
     private Product product;
 
 
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "storage")
     private List<ShopCart> shopCart = new ArrayList<>();
 

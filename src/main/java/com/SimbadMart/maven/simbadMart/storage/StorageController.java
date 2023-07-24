@@ -12,10 +12,6 @@ public class StorageController {
     @Autowired
     StorageRepository storageRepository;
 
-//    @PostMapping("save")
-//    public void saveCompanyOrder(@RequestBody Storage companyOrder) {
-//        storageRepository.save(companyOrder);
-//        System.out.println("Message stored");
-//    }
+
 
 }

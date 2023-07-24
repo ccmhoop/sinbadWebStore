@@ -18,7 +18,7 @@ public class CustomerController {
 
     @PostMapping("register")
     public Customer registerCustomer(@RequestBody Customer customer) {
-        System.out.println("Data has been send!");
+        System.out.println("New " + customer.getRole() + " has been added!");
         return customerRepository.save(customer);
     }
 
