@@ -6,13 +6,18 @@ $cartWidth: 50px;
 
 .header {
   display: grid;
-  position: sticky;
-  height: 10vh;
+  height: 6vh;
   grid-template-columns: 1fr 10fr 1fr;
   grid-gap: 10px;
   align-items: center;
   padding: 1rem;
-  background-color: #a076f9;
+
+  background: linear-gradient(
+    135deg,
+    rgba(101, 40, 247, 1) 0%,
+    rgba(160, 118, 249, 1) 100%
+  );
+  box-shadow: inset 0rem 0rem 1rem .3rem rgba(255, 215, 0, 0.2);
 }
 
 .logo {

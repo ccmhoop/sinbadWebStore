@@ -1,18 +1,17 @@
 import React from "react";
 import homeStore from "../stores/homeStore";
-import ListItem from "../components/ListItem";
 import Header from "../components/Header";
-import HomeBody from "../components/HomeBody";
 import Footer from "../components/Footer";
 import StickyBar from "../components/StickyBar";
-
+import { Link } from "react-router-dom";
+import "../scss/homeSheet.scss";
 
 export default function Home() {
   const store = homeStore();
 
-  React.useEffect(() => {
-    store.fetchHomeProducts();
-  }, []);
+  // React.useEffect(() => {
+  //   store.fetchHomeProducts();
+  // }, []);
 
   return (
     <>
@@ -21,36 +20,31 @@ export default function Home() {
       <div className="app">
         <div className="home-page">
           <span>Sinbad</span>
-          <div className="sales-container">
-            <div className="saleBox1 sales-box box-style">Sale 1</div>
-            <div className="saleBox2 sales-box box-style">Sale 2</div>
-            <div className="saleBox3 sales-box box-style">Sale 3</div>
+          <div className="home-sales-container">
+            <div className="saleBox1 home-sales-box home-box-style">Sale 1</div>
+            <div className="saleBox2 home-sales-box home-box-style">Sale 2</div>
+            <div className="saleBox3 home-sales-box home-box-style">Sale 3</div>
           </div>
-          <div className="extra-container">
-            <div className="extra box-style">extra 1</div>
-            <div className="extra box-style">extra 2</div>
+          <div className="home-extra-container">
+            <div className="home-extra home-box-style">extra 1</div>
+            <div className="home-extra home-box-style">extra 2</div>
           </div>
           <span>Categories</span>
-          <div className="categories-container">
-            <div className="category1 categories-box box-style"></div>
-            <div className="category2 categories-box box-style"></div>
-            <div className="category3 categories-box box-style"></div>
-            <div className="category4 categories-box box-style"></div>
-            <div className="category5 categories-box box-style"></div>
-            <div className="category6 categories-box box-style"></div>
+          <div className="home-categories-container">
+            <Link to="/products" state={{ search: "Fruits" }}><div className="home-categories-box home-box-style">Fruits</div></Link>   
+            <Link to="/products" state={{ search: "Vegetables" }}><div className="home-categories-box home-box-style">Vegetables</div></Link> 
+            <Link to="/products" state={{ search: "Bakery" }}><div className="home-categories-box home-box-style">Bakery</div></Link>    
+            <Link to="/products" state={{ search: "Snacks" }}><div className="home-categories-box home-box-style">Snacks</div></Link>  
+            <Link to="/products" state={{ search: "Dairy" }}><div className="home-categories-box home-box-style">Dairy</div></Link>
+            <Link to="/products" state={{ search: "Personal Care" }}><div className="home-categories-box home-box-style">Personal Care</div></Link>
+            <Link to="/products" state={{ search: "Breakfast" }}><div className="home-categories-box home-box-style">Breakfast</div></Link>
+            <Link to="/products" state={{ search: "Beverages" }}><div className="home-categories-box home-box-style">Beverages</div></Link>       
+            <Link to="/products" state={{ search: "Pantry" }}><div className="home-categories-box home-box-style">Pantry</div></Link>   
+            <Link to="/products" state={{ search: "Meat" }}><div className="home-categories-box home-box-style">Meat</div></Link>   
+            <Link to="/products" state={{ search: "Seafood" }}><div className="home-categories-box home-box-style">Seafood</div></Link> 
+            </div>
           </div>
-          <div className="product-flex">
-            {store.products.map((product) => {
-              return (
-                <div key={product.id}>
-                  {/* <HomeBody key={product.id} product={product} /> */}
-                  {/* <ListItem key={product.id} product={product} /> */}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <Footer />
+        <Footer/>
       </div>
     </>
   );

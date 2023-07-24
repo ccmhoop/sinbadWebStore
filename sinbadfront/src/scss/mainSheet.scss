@@ -7,15 +7,27 @@ $radius: 1rem;
 $gold: #FFD700;
 
 *{
-    background-color: $backgroundColor ;
     margin: 0;
     padding: 0;
 }
 
 .app{
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
 }
 
+.total-price{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // width: 5em;
+    // height: 2em;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: gold solid .1rem;
+    background-color:rgba(160, 118, 249, 1) ;
+    font-size: 1em;
+
+}
 

@@ -1,39 +1,36 @@
 import axios from "axios";
-
 import { create } from "zustand";
+import debounce from "../helpers/debounce";
 
-const homeStore = create((set) => ({
-  
+
+const productStore = create((set) => ({
   products: [],
 
-
-  fetchHomeProducts: async () => {
-
+  fetchProducts: async () => {
     const sinbadproducts = await axios.get(
       "http://localhost:8080/api/v1/product"
     );
-    console.log("fetch", sinbadproducts);
-     const category = homeStore.getState();
-
+    console.log("Fetch", sinbadproducts);
 
     const products = sinbadproducts.data.map((product) => {
-      if(category.category === product.category){
-        console.log("daddy",product.category,"da",category.category)
-
-      }
-            return {
+      return {
         name: product.productType,
         category: product.category,
         description: product.description,
         price: product.productPrice,
+        total: product.productPrice,
         id: product.productID,
       };
-  
     });
-    console.log("fetch sorted", products);
+    console.log("Fetch Sorted", products);
     set({ products });
   },
-})
-);
+}));
 
-export default homeStore;
+
+
+
+
+
+
+export default productStore;

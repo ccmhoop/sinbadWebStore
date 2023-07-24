@@ -12,17 +12,18 @@ public class Product {
 
     @Id
     @GeneratedValue
-    Long productID;
-    String productType;
-    String category;
-    String description;
-    BigDecimal productPrice;
-    BigDecimal unitCost;
-
-    Product(){
+    private Long productID;
+    private String productType;
+    private String category;
+    private String description;
+    private BigDecimal productPrice;
+    private BigDecimal unitCost;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+    private List<Storage> storage = new ArrayList<>();
+    Product() {
     }
 
-    public Product(String productType, String description, BigDecimal productPrice, String category, BigDecimal unitCost) {
+    public Product(String productType, String category, BigDecimal productPrice, String description, BigDecimal unitCost) {
         this.productType = productType;
         this.description = description;
         this.productPrice = productPrice;
@@ -30,8 +31,7 @@ public class Product {
         this.category = category;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
-    private List<Storage> storage = new ArrayList<>();
+
 
     public Long getProductID() {
         return productID;
@@ -51,5 +51,9 @@ public class Product {
 
     public BigDecimal getUnitCost() {
         return unitCost;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

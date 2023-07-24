@@ -22,6 +22,8 @@ public class ShopCart {
     @JoinColumn(name = "customerid", nullable = false)
     private Customer customer;
 
+    private int customerTimesOrdered;
+
     public ShopCart() {
     }
 
@@ -29,6 +31,14 @@ public class ShopCart {
         this.amount = amount;
         this.storage = storage;
         this.customer = customer;
+    }
+
+    public int getCustomerTimesOrdered() {
+        return customerTimesOrdered;
+    }
+
+    public void setCustomerTimesOrdered(int customerTimesOrdered) {
+        this.customerTimesOrdered = customerTimesOrdered;
     }
 
     public Customer getCustomer(){
