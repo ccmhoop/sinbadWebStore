@@ -1,19 +1,17 @@
 package com.SimbadMart.maven.simbadMart;
 
-import com.SimbadMart.maven.simbadMart.customer.Customer;
-import com.SimbadMart.maven.simbadMart.customer.CustomerController;
-import com.SimbadMart.maven.simbadMart.customer.CustomerRepository;
-import com.SimbadMart.maven.simbadMart.customer.UserRole;
 import com.SimbadMart.maven.simbadMart.product.Product;
 import com.SimbadMart.maven.simbadMart.product.ProductRepository;
+import com.SimbadMart.maven.simbadMart.storage.Storage;
+import com.SimbadMart.maven.simbadMart.storage.StorageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Component
 public class Seed implements CommandLineRunner {
@@ -22,16 +20,33 @@ public class Seed implements CommandLineRunner {
     ProductRepository productRepository;
 
     @Autowired
-    CustomerRepository customerRepository;
+    StorageRepository storageRepository;
+    List<Product> products = new ArrayList<>();
+    List<Storage> storages = new ArrayList<>();
+    Random storageAmountRandomizer = new Random();
 
     @Override
     public void run(String... args) throws Exception {
         seedProduct();
+        seedStorage();
+    }
+
+
+    public void seedStorage() {
+        if (storageRepository.count() == 0) {
+            for (Product product : products) {
+                storages.add(new Storage(storageAmountRandomizer.nextInt(120), product, null));
+            }
+
+            for (Storage storage : storages) {
+                storageRepository.save(storage);
+            }
+            System.out.println("Stored: " + storageRepository.count() + " products");
+        }
     }
 
 
     public void seedProduct() {
-        List<Product> products = new ArrayList<>();
         if (productRepository.count() == 0) {
             // Fruits
             products.add(new Product("Apple", "Fruits", new BigDecimal("1.99"), "Fresh and delicious apples.", new BigDecimal("1.49")));
