@@ -21,7 +21,7 @@ public class Customer {
     private LocalDate dateOfBirth;
     private String phone;
     private String password;
-
+    private int timesOrdered;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
     private List<ShopCart> shopCart = new ArrayList<>();
@@ -38,6 +38,14 @@ public class Customer {
         this.phone = phone;
         this.shopCart = shopCart;
         this.password = password;
+    }
+
+    public int getTimesOrdered() {
+        return timesOrdered;
+    }
+
+    public void setTimesOrdered(int timesOrdered) {
+        this.timesOrdered = timesOrdered;
     }
 
     public Long getId() {
