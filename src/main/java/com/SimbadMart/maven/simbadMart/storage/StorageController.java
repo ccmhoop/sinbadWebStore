@@ -1,9 +1,11 @@
 package com.SimbadMart.maven.simbadMart.storage;
 
 import com.SimbadMart.maven.simbadMart.product.Product;
+import com.SimbadMart.maven.simbadMart.product.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,9 +20,11 @@ public class StorageController {
 
     @GetMapping("all")
     public List<Storage> findAll() {
+        for(Product product : storageRepository.findAll().stream().map(Storage::getProduct).toList()){
+            System.out.println(product.getProductType());
+        }
         return storageRepository.findAll();
     }
-
     @GetMapping("{productId}")
     public Optional<Storage> findByProduct(@PathVariable("productId") Product product) {
         return storageRepository.findByProduct(product);

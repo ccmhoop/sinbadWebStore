@@ -2,10 +2,7 @@ package com.SimbadMart.maven.simbadMart.storage;
 
 import com.SimbadMart.maven.simbadMart.ShopCart.ShopCart;
 import com.SimbadMart.maven.simbadMart.product.Product;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -24,7 +21,7 @@ public class Storage {
         this.shopCart = shopCart;
     }
 
-    public Storage(){
+    public Storage() {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -47,7 +44,7 @@ public class Storage {
         return amount;
     }
 
-    @JsonGetter
+
     public Product getProduct() {
         return product;
     }
