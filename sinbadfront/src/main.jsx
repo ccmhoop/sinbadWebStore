@@ -6,15 +6,17 @@ import Products from "./pages/Products";
 import ShopCart from "./pages/ShopCart";
 import CheckOut from "./pages/CheckOut";
 import "./scss/mainSheet.scss";
+import ProductInfo from "./pages/ProductInfo";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route index element={<Home/>}/>
-      <Route path="/products" element={<Products/>}/>
-      <Route path="/shopcart" element={<ShopCart/>}/>
-      <Route path="/checkout" element={<CheckOut/>}/>
+      <Route index element={<Home />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/shopcart" element={<ShopCart />} />
+      <Route path="/checkout" element={<CheckOut />} />
+      <Route path="/productinfo" element={<ProductInfo />} />
     </Routes>
   </BrowserRouter>
 );
