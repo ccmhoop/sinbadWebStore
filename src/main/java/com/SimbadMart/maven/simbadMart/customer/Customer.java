@@ -15,12 +15,14 @@ public class Customer {
     private Long Id;
     private String customerName;
     private String customerSurname;
+    @Column(unique = true)
     private String eMail;
     private String address;
     @Enumerated(EnumType.STRING)
     private UserRole role;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
+    @Column(unique = true)
     private String phone;
     private String password;
     private int timesOrdered;
@@ -91,4 +93,5 @@ public class Customer {
     public UserRole getRole() {
         return role;
     }
+
 }
