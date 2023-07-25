@@ -1,0 +1,86 @@
+@import 'mainSheet';
+
+.register-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.register-flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 40em;
+    width: 50em;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    margin-bottom: 1em;
+    border: .4rem outset $gold;
+    border-radius: 1rem;
+    background: linear-gradient(
+      135deg,
+      rgba(101, 40, 247, 1) 0%,
+      rgba(160, 118, 249, 1) 100%
+    );
+    box-shadow: inset 0rem 0rem 1rem .3rem rgba(255, 215, 0, 0.2);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.register-inner-flexbox{
+    margin-top: 2em;
+    // border: red solid;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 40em;
+}
+    
+
+
+
+input{
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: 1em;
+    border: gold inset .5rem;
+    background-color:rgba(160, 118, 249, 1) ;
+    text-align: center;
+    font-size: 1em;
+}
+
+button{
+    margin: auto;
+    border: .4rem outset $gold;
+    border-radius: 1rem;
+    background: linear-gradient(
+      135deg,
+      rgba(101, 40, 247, 1) 0%,
+      rgba(160, 118, 249, 1) 100%
+    );
+    box-shadow: inset 0rem 0rem 1rem .3rem rgba(255, 215, 0, 0.2);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+    width: 10em;
+    height: 4em;
+}
+
+button:hover{
+    box-shadow: inset 0rem 0rem 1rem .3rem rgba(255, 217, 0, 0.555);
+}
+
+button:active{
+    scale: 80%;
+}

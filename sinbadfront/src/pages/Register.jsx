@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import StickyBar from "../components/StickyBar";
+import "../scss/register-pageSheet.scss";
 
 export default function Register() {
   const [user, setUser] = useState({
@@ -23,6 +27,13 @@ export default function Register() {
       ...prevUser,
       [name]: newValue,
     }));
+  };
+
+  const formatDateToString = (dateOfBirth) => {
+    const year = dateOfBirth.getFullYear();
+    const month = String(dateOfBirth.getMonth() + 1).padStart(2, "0");
+    const day = String(dateOfBirth.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
   };
 
   const handleSubmit = (e) => {
@@ -75,7 +86,7 @@ export default function Register() {
         <input
           type="date"
           name="dateOfBirth"
-          value={user.dateOfBirth}
+          value={formatDateToString(user.dateOfBirth)}
           onChange={handleChange}
         />
         <input
