@@ -1,5 +1,7 @@
 @import 'mainSheet';
-
+*{
+    color:gold;
+}
 
 .sticky-container{
     position:sticky;
@@ -7,9 +9,9 @@
 
     display: grid;
     grid-template-areas: 
-    "shopcart search rightfr";
+    "leftfr search rightfr";
     grid-template-columns:
-    10fr 10fr 2fr
+    10fr 9fr 2fr
     ;
     top: 0vh;
     width: 100%;
@@ -23,6 +25,7 @@
     box-shadow: 0 .3rem .2rem 0px rgba(248, 170, 3, 0.205);
 }
 
+
 .sticky-search{
     grid-area: search;
     height: 50%;
@@ -30,8 +33,28 @@
     border: $gold solid .15rem;
     background-color: #bea1fd;
 }
-.sticky-shopcart{
+
+.sticky-rightfr{
     grid-area: rightfr;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 25em;
+    height:3.5em;
+}
+
+.sticky-login{
+    margin: auto;
+
+}
+
+.sticky-register{
+margin: auto;
+padding-right: 1em;
+}
+
+.sticky-shopcart{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,7 +65,6 @@
 }
 
 .sticky-pricebox{
-    grid-area: rightfr;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,17 +80,18 @@
     box-shadow: 0px 0px .1rem 2px rgba(0, 0, 0, 0.3);
     color: gold;
     height: 2.8em;
-    width: 6em;
+    width: 10em;
 }
 .sticky-totalprice{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5em;
+    width: 8em;
     height: 4em;
     span{
-    width: 5em;
+    width: 8em;
     height: 1.8em;
+    margin-right: 1em;
     }
  
 }

@@ -6,6 +6,7 @@ import Products from "./pages/Products";
 import ShopCart from "./pages/ShopCart";
 import Register from "./pages/Register";
 import CheckOut from "./pages/CheckOut";
+import Account from "./pages/Account";
 import "./scss/mainSheet.scss";
 import AddManager from "./pages/AddManager";
 
@@ -19,6 +20,7 @@ root.render(
       <Route path="/checkout" element={<CheckOut />} />
       <Route path="/manager" element={<AddManager />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Account />} />
     </Routes>
   </BrowserRouter>
 );
