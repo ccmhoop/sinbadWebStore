@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -20,12 +21,17 @@ public class StorageController {
         return storageRepository.findAll();
     }
 
+    @GetMapping("{productId}")
+    public Optional<Storage> findByProduct(@PathVariable("productId") Product product) {
+        return storageRepository.findByProduct(product);
+    }
+
     @PostMapping("add/{productId}")
     public void addProduct(@PathVariable("productId") Product product) {
         storageRepository.save(new Storage(0, product, null));
         var storageProduct = storageRepository.findByProduct(product);
-        System.out.println("\u001B[32m" + "Has been updated" + " StorageId: " +  storageRepository.findByProduct(product) +
-                 " " +  storageProduct.get().getProduct() +  "\u001B[0m.");
+        System.out.println("\u001B[32m" + "Has been updated" + " StorageId: " + storageRepository.findByProduct(product) +
+                " " + storageProduct.get().getProduct() + "\u001B[0m.");
 
     }
 
