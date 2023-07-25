@@ -15,16 +15,19 @@ public class Storage {
     Long StorageID;
     int amount;
 
+    public Storage(int amount, Product product, List<ShopCart> shopCart) {
+        this.amount = amount;
+        this.product = product;
+        this.shopCart = shopCart;
+    }
 
-
-    Storage(){
+    public Storage(){
     }
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="productid", nullable = false)
     private Product product;
-
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "storage")
     private List<ShopCart> shopCart = new ArrayList<>();

@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import StickyBar from "../components/StickyBar";
+import "../scss/register-pageSheet.scss";
 
 export default function Register() {
   const [user, setUser] = useState({
@@ -9,6 +13,7 @@ export default function Register() {
     address: "",
     password: "",
     dateOfBirth: new Date(),
+    role: "CUSTOMER",
     phone: 0,
   });
 

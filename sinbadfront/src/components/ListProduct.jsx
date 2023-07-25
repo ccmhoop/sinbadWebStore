@@ -4,6 +4,7 @@ import { addToCart , viewPrice } from "../stores/shoppingCart";
 
 function lister(product) {
   const raiseTotal = viewPrice((state) => state.raiseTotal);
+  
   const addItem = (id, name, price) => {
     addToCart(id, name, price,price);
     raiseTotal(price);
