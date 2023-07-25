@@ -15,9 +15,18 @@ public class StorageController {
     @Autowired
     StorageRepository storageRepository;
 
-    @GetMapping("storage")
+    @GetMapping("all")
     public List<Storage> findAll() {
         return storageRepository.findAll();
+    }
+
+    @PostMapping("add/{productId}")
+    public void addProduct(@PathVariable("productId") Product product) {
+        storageRepository.save(new Storage(0, product, null));
+        var storageProduct = storageRepository.findByProduct(product);
+        System.out.println("\u001B[32m" + "Has been updated" + " StorageId: " +  storageRepository.findByProduct(product) +
+                 " " +  storageProduct.get().getProduct() +  "\u001B[0m.");
+
     }
 
     @PostMapping("{productId}/replace/{amount}")

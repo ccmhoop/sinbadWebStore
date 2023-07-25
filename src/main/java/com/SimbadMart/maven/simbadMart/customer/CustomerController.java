@@ -1,10 +1,8 @@
 package com.SimbadMart.maven.simbadMart.customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,6 +22,7 @@ public class CustomerController {
         System.out.println("New " + customer.getRole() + " has been added!");
         return customerRepository.save(customer);
     }
+
 
     @GetMapping("customers")
     public List<Customer> findAll() {
@@ -55,6 +54,9 @@ public class CustomerController {
             return ResponseEntity.notFound().build();
         }
     }
+
+
+
 }
 
 

@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/shop")
 public class ShopCartController {
 
     @Autowired
     ShopCartRepository shopCartRepository;
+
 
 }

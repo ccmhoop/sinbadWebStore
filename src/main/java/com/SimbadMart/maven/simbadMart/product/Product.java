@@ -12,7 +12,7 @@ public class Product {
 
     @Id
     @GeneratedValue
-    private Long productID;
+    private Long productId;
     private String productType;
     private String category;
     private String description;
@@ -32,9 +32,8 @@ public class Product {
     }
 
 
-
-    public Long getProductID() {
-        return productID;
+    public Long getProductId() {
+        return productId;
     }
 
     public String getProductType() {
@@ -60,7 +59,7 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "productID=" + productID +
+                "productID=" + productId +
                 ", productType='" + productType + '\'' +
                 ", category='" + category + '\'' +
                 ", description='" + description + '\'' +
