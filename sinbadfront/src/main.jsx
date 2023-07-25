@@ -9,6 +9,7 @@ import Account from "./pages/Account";
 import "./scss/mainSheet.scss";
 import ProductInfo from "./pages/ProductInfo";
 import AddManager from "./pages/AddManager";
+import Register from "./pages/Register";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

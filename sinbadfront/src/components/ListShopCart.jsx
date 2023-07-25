@@ -5,6 +5,8 @@ import { addToCart, removeFromCart,viewPrice } from "../stores/shoppingCart";
 
 export default function ListShopCart({ id, name, price, quantity }) {
   const [itemQuantity, setItemQuantity] = useState(quantity);
+
+  
   const raiseTotal = viewPrice((state) => state.raiseTotal);
   const lowerTotal = viewPrice((state) => state.lowerTotal);
 

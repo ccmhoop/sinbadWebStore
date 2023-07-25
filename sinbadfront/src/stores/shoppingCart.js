@@ -1,6 +1,5 @@
 import { create } from "zustand";
 
-
 const CART_ITEMS_KEY = "cart_items";
 
 
@@ -32,6 +31,7 @@ export function removeFromCart(productId) {
       item.priceTotal -= item.price;
     } else {
       cartItems.splice(index, 1);
+      
     }
     localStorage.setItem(CART_ITEMS_KEY, JSON.stringify(cartItems));
     console.log("cart", cartItems);
@@ -47,6 +47,15 @@ export const viewPrice= create(set => ({
 }
 ));
 
+
+export const quant=(id)=>{
+  const index = cartItems.findIndex((item) => item.productId === id);
+  if ( index != -1){
+    return cartItems[index].quantity;
+  }else{
+    return 0;
+  }
+}
 
 
 
