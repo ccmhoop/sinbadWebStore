@@ -9,9 +9,9 @@
 
     display: grid;
     grid-template-areas: 
-    "leftfr search rightfr";
+    "leftfr search  rightfr";
     grid-template-columns:
-    10fr 9fr 2fr
+    10fr 10fr 10fr
     ;
     top: 0vh;
     width: 100%;
@@ -24,7 +24,15 @@
     z-index: 100;
     box-shadow: 0 .3rem .2rem 0px rgba(248, 170, 3, 0.205);
 }
-
+.sticky-products{    display: flex;
+    grid-area: search;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 .sticky-search{
     grid-area: search;
@@ -32,6 +40,8 @@
     width: 20rem;
     border: $gold solid .15rem;
     background-color: #bea1fd;
+    margin-left:auto;
+    margin-right: auto;
 }
 
 .sticky-rightfr{
@@ -40,19 +50,33 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    width: 25em;
+    width: 30em;
     height:3.5em;
+    // margin-right: 50em;
+    // border: red solid;
 }
 
-.sticky-login{
-    margin: auto;
+
+.sticky-login,.sticky-register{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: .1rem outset $gold;
+    border-radius: 1.1rem;
+    background: linear-gradient(135deg,
+        rgba(101, 40, 247, 1) 0%,
+        rgba(160, 118, 249, 1) 100%);
+    box-shadow: inset 0rem 0rem 1rem .3rem rgba(255, 215, 0, 0.2);
+    box-shadow: 0px 0px .1rem 2px rgba(0, 0, 0, 0.3);
+    color: gold;
+    height: 2.3em;
+    width: 5em;
 
 }
 
-.sticky-register{
-margin: auto;
-padding-right: 1em;
-}
 
 .sticky-shopcart{
     display: flex;
@@ -64,7 +88,7 @@ padding-right: 1em;
     object-fit: cover;
 }
 
-.sticky-pricebox{
+.sticky-pricebox,.sticky-products{
     display: flex;
     justify-content: center;
     align-items: center;

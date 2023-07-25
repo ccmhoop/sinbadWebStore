@@ -29,12 +29,6 @@ export default function Register() {
     }));
   };
 
-  const formatDateToString = (dateOfBirth) => {
-    const year = dateOfBirth.getFullYear();
-    const month = String(dateOfBirth.getMonth() + 1).padStart(2, "0");
-    const day = String(dateOfBirth.getDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -86,7 +80,7 @@ export default function Register() {
         <input
           type="date"
           name="dateOfBirth"
-          value={formatDateToString(user.dateOfBirth)}
+          value={user.dateOfBirth}
           onChange={handleChange}
         />
         <input

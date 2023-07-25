@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import productStore from "../stores/productStore";
 import Header from "../components/Header";
-import ListProduct from "../components/ListProduct";
+import {ListProduct} from "../components/ListProduct";
 import Footer from "../components/Footer";
 import StickyBar from "../components/StickyBar";
 import "../scss/products-pageSheet.scss";

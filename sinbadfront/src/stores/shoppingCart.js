@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import {userData} from "../stores/loginState";
 
 const CART_ITEMS_KEY = "cart_items";
 
@@ -56,6 +57,29 @@ export const quant=(id)=>{
     return 0;
   }
 }
+
+export const userCartdata =  () =>{
+const data = []
+
+console.log(userData)
+  data.push([userData[0].id,userData[0].timesOrdered+1])
+
+  cartItems.forEach(element => {
+    data.push([element.name])
+  });
+  console.log("userCartData",data,userData);
+  return data;
+}
+
+
+export const checkOutStorage =  () =>{
+  const data = []
+    cartItems.forEach(element => {
+      data.push([element.quantity,element.productId])
+    });
+    console.log("Storage",data);
+    return data;
+  }
 
 
 
