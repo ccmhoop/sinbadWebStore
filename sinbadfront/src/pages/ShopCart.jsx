@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import StickyBar from "../components/StickyBar";
-import { getCartItemsFromLocalStorage } from "../stores/shoppingCart";
+import { getCartItemsFromLocalStorage, userCartdata,checkOutStorage } from "../stores/shoppingCart";
 import "../scss/shopcart-pageSheet.scss";
 import ListShopCart from "../components/ListShopCart";
 import TotalPriceView from "../components/TotalPriceView";
@@ -23,8 +23,12 @@ export default function shopcart() {
         <div className="shopcart-container">
           <span className="shopcart-checkout-box">
             <TotalPriceView />
-            <Link to="/checkout">
-              <div className="shoptcart-checkout-accept">Check Out</div>
+            <Link to="/shopcart">
+              <div onClick={() => {
+                userCartdata();
+                checkOutStorage();
+
+        }} className="shoptcart-checkout-accept">Check Out</div>
             </Link>
           </span>
           <div className="shopcart-item-grid-flex">

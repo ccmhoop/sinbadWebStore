@@ -3,7 +3,7 @@ import "../scss/stickyBarSheet.scss";
 import { useNavigate, Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
 import TotalPriceView from "../components/TotalPriceView";
-import { userLogedIn,log } from "../stores/loginState";
+import { userLogedIn, log } from "../stores/loginState";
 
 export default function StickyBar() {
   const navigate = useNavigate();
@@ -13,6 +13,9 @@ export default function StickyBar() {
   return (
     <>
       <div className="sticky-container">
+        <Link to="/products" state={{ search: " " }}>
+          <div className="sticky-products">Products</div>
+        </Link>
         <input
           className="sticky-search"
           type="text"
@@ -26,10 +29,27 @@ export default function StickyBar() {
         />
         <div className="sticky-rightfr">
           <span className="sticky-login">
-            {log()? (<Link to="/man">Acount</Link>) : (<Link to="/login">Login</Link>) }
+            {log() ? (
+              <Link to="/man">Acount</Link>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
           </span>
-          <span className="sticky-register"> {log() ? (<Link to="/">Logout</Link>) : (<Link to="/register">Register</Link>) }
-
+          <span className="sticky-register">
+            {" "}
+            {log() ? (
+              <Link
+                to="/"
+                onClick={() => {
+                  localStorage.clear("user_data");
+                  window.location.reload(false);
+                }}
+              >
+                Logout
+              </Link>
+            ) : (
+              <Link to="/register">Register</Link>
+            )}
           </span>
           <div className="sticky-pricebox">
             <div className="sticky-totalprice">

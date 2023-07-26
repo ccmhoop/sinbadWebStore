@@ -10,7 +10,7 @@ const productStore = create((set) => ({
     const sinbadproducts = await axios.get(
       "http://localhost:8080/api/v1/product"
     );
-    console.log("Fetch", sinbadproducts);
+    console.log("Fetch1", sinbadproducts);
 
     const products = sinbadproducts.data.map((product) => {
       return {
@@ -19,10 +19,10 @@ const productStore = create((set) => ({
         description: product.description,
         price: product.productPrice,
         total: product.productPrice,
-        id: product.productID,
+        id: product.productId,
       };
     });
-    console.log("Fetch Sorted", products);
+    console.log("Fetch Sorted1", products);
     set({ products });
   },
 }));

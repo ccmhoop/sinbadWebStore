@@ -10,7 +10,7 @@ export default function AddManager() {
       address: "123 Main Street", // Replace with a random address if desired
       password: "randompassword123", // Replace with a random password if desired
       dateOfBirth: new Date(1990, 5, 15), // Replace with a random date if desired
-      role: "MANAGER",
+      role: "CUSTOMER",
       phone: "065595959", // Replace with a random phone number if desired
   });
 

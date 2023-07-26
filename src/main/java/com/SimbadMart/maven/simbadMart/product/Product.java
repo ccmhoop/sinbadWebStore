@@ -1,25 +1,30 @@
 package com.SimbadMart.maven.simbadMart.product;
 
 import com.SimbadMart.maven.simbadMart.storage.Storage;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Product {
 
     @Id
     @GeneratedValue
-    private Long productID;
+    private Long productId;
     private String productType;
     private String category;
     private String description;
     private BigDecimal productPrice;
     private BigDecimal unitCost;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
-    private List<Storage> storage = new ArrayList<>();
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product", cascade = CascadeType.ALL)
+    @Column(nullable = false)
+    @JsonManagedReference
+    private Set<Storage> storage = new HashSet<>();
     Product() {
     }
 
@@ -31,10 +36,8 @@ public class Product {
         this.category = category;
     }
 
-
-
-    public Long getProductID() {
-        return productID;
+    public Long getProductId() {
+        return productId;
     }
 
     public String getProductType() {
@@ -57,15 +60,8 @@ public class Product {
         return category;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "productID=" + productID +
-                ", productType='" + productType + '\'' +
-                ", category='" + category + '\'' +
-                ", description='" + description + '\'' +
-                ", productPrice=" + productPrice +
-                ", unitCost=" + unitCost +
-                '}';
+    public Set<Storage> getStorage() {
+        return storage;
     }
+
 }
