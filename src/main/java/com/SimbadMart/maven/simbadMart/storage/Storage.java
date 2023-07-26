@@ -44,7 +44,6 @@ public class Storage {
         return amount;
     }
 
-
     public Product getProduct() {
         return product;
     }

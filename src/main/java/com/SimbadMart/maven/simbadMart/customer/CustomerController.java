@@ -1,5 +1,6 @@
 package com.SimbadMart.maven.simbadMart.customer;
 
+import com.SimbadMart.maven.simbadMart.ShopCart.ShopCartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,8 @@ public class CustomerController {
 
     @Autowired
     private CustomerRepository customerRepository;
+    @Autowired
+    private ShopCartRepository shopCartRepository;
 
     @PostMapping("register")
     public Customer registerCustomer(@RequestBody Customer customer) {
@@ -23,6 +26,11 @@ public class CustomerController {
         return customerRepository.save(customer);
     }
 
+
+    @GetMapping("id")
+    public Optional<Customer> findById(Long id){
+        return customerRepository.findById(id);
+    }
 
     @GetMapping("customers")
     public List<Customer> findAll() {
@@ -34,6 +42,9 @@ public class CustomerController {
         return customerRepository.findByCustomerSurname(surname);
     }
 
+
+//    @PostMapping("customer/shop")
+//    public
 
     @PostMapping("login")
     public ResponseEntity<Customer> loginCustomer(@RequestBody LoginRequest loginRequest) {
