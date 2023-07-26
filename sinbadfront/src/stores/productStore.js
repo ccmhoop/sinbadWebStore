@@ -19,7 +19,7 @@ const productStore = create((set) => ({
         description: product.description,
         price: product.productPrice,
         total: product.productPrice,
-        id: product.productId,
+        id: product.productID,
       };
     });
     console.log("Fetch Sorted1", products);

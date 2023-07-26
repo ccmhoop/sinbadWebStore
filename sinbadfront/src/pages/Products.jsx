@@ -15,6 +15,8 @@ export default function Products() {
 
   const store = productStore();
 
+const test = []
+
 
   React.useEffect(() => {
     store.fetchProducts();
@@ -43,6 +45,12 @@ export default function Products() {
         </div>
           <div className="products-flex">
             {store.products.map((product) => {
+          
+              if(test.findIndex((item)=> item.id === product.id) >= 1){
+                return;
+              }
+              test.push(product);
+              console.log(test)
               return (   
                 <div key={product.id}>
                   <ListProduct product={product} search={search} />

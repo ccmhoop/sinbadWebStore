@@ -19,6 +19,8 @@ export default function ProductInfo() {
   const raiseTotal = viewPrice((state) => state.raiseTotal);
   const lowerTotal = viewPrice((state) => state.lowerTotal);
 
+  console.log(999444,id)
+
   const addItem = (id, name, price) => {
     addToCart(id, name, price, price);
     raiseTotal(price);
