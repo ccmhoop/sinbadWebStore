@@ -22,15 +22,8 @@ public class ShopCartController {
        var customer = customerRepository.findById(customerId).get();
         var storage = storageRepository.findById(storageId).get();
         int storAmount = storage.getAmount() - amount;
-
-
-        int order = customer.getTimesOrdered();
-       if (customer.getTimesOrdered()!=customerTimesOrdered){
-           order++;
-       }
-
        if (amount > 0) {
-            customer.setTimesOrdered(order);
+            customer.setTimesOrdered(customerTimesOrdered);
             storage.setAmount(storAmount);
             return shopCartRepository.save(new ShopCart(amount, storageRepository.findById(storageId).get(), customerRepository.findById(customerId).get(), customer.getTimesOrdered()));
         } else return null;

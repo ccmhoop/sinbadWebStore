@@ -1,0 +1,102 @@
+.manager-page{
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 90em;
+    height: 50em;
+    overflow-y: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+    border: gold solid;
+    background-color:  #bea1fd;
+    box-shadow: 0px 0px .2rem .04rem rgba(0, 0, 0, 0.3);
+}
+
+.manager-search{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    height: 2em;
+}
+.manager-remove{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: 900;
+    width: 8em;
+    height: 4em;
+    box-shadow: 0px 0px .2rem .04rem rgba(0, 0, 0, 0.3);
+    margin-left: 1em;
+}
+
+.manager-product-row{
+    display: flex;
+    flex-direction: row;
+    width:68em
+}
+
+.manager-product-box{
+
+    margin-bottom: 1em;
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+      border: .4rem outset gold;
+      border-radius: 1rem;
+      background: linear-gradient(
+        135deg,
+        rgba(101, 40, 247, 1) 0%,
+        rgba(160, 118, 249, 1) 100%
+      );
+      box-shadow: inset 0rem 0rem 1rem .3rem rgba(255, 215, 0, 0.2);
+      box-shadow: 0px 0px .2rem .01rem rgba(0, 0, 0, 0.3);
+      width: 50em;
+      height: 5em;
+        span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            margin-left: 1em;
+            width:7em;
+            height: 2em;
+            border: gold solid;
+            background-color:  #bea1fd;
+            box-shadow: 0px 0px .2rem .04rem rgba(0, 0, 0, 0.3);
+
+        }
+
+      div{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 15em;
+        font-size: 1.5em;
+        height: 2em;
+        margin-left: 1em;
+      }
+      input{
+        margin: auto;
+        height: 2em;
+        width: 4em;
+        margin-right: 1em;
+      }
+
+      form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        padding: 1em;
+      }
+
+      button{
+        width: 6em;
+        box-shadow: 0px 0px .2rem .04rem rgba(0, 0, 0, 0.3);
+      }
+}

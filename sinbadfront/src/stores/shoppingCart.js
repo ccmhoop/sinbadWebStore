@@ -58,11 +58,16 @@ export const quant = (id) => {
   }
 };
 export const userCartdata = () => {
+  let timesOrdered = userData[0].timesOrdered+1;
   cartItems.forEach((element) => {
     let storageID = element.productId;
     let customerId = userData[0].id;
-    let timesOrdered = userData[0].timesOrdered;
+    // let timesOrdered = userData[0].timesOrdered;
     let amount = element.quantity;
+    
+    console.log(timesOrdered);
+    // let timesOrdered = 1 ;
+  
     axios
       .post(
         `http://localhost:8080/api/v1/shop/save/${customerId}/${storageID}/${amount}/${timesOrdered}`
@@ -71,6 +76,7 @@ export const userCartdata = () => {
         console.log(
           "order successful",
           response.data
+          
         );
       })
       .catch((error) => {
@@ -78,13 +84,6 @@ export const userCartdata = () => {
         return;
       });
   });
+  userData[0].timesOrdered+=1;
 };
 
-export const checkOutStorage = () => {
-  // const data = []
-  //   cartItems.forEach(element => {
-  //     data.push([element.quantity,element.productId])
-  //   });
-  //   console.log("Storage",data);
-  //   return data;
-};
