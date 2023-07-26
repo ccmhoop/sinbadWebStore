@@ -19,10 +19,19 @@ public class ShopCartController {
 
     @PostMapping("save/{customerId}/{storageId}/{amount}/{customerTimesOrdered}")
     public ShopCart saveShopCart(@PathVariable("customerId") Long customerId, @PathVariable("storageId") Long storageId, @PathVariable("amount") int amount, @PathVariable("customerTimesOrdered") int customerTimesOrdered) {
+       var customer = customerRepository.findById(customerId).get();
+        var storage = storageRepository.findById(storageId).get();
+        int storAmount = storage.getAmount() - amount;
 
-        if (amount > 0) {
-            var customer = customerRepository.findById(customerId).get();
-            customer.setTimesOrdered(customerTimesOrdered);
+
+        int order = customer.getTimesOrdered();
+       if (customer.getTimesOrdered()!=customerTimesOrdered){
+           order++;
+       }
+
+       if (amount > 0) {
+            customer.setTimesOrdered(order);
+            storage.setAmount(storAmount);
             return shopCartRepository.save(new ShopCart(amount, storageRepository.findById(storageId).get(), customerRepository.findById(customerId).get(), customer.getTimesOrdered()));
         } else return null;
     }

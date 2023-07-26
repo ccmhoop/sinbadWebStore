@@ -57,14 +57,12 @@ export const quant = (id) => {
     return 0;
   }
 };
-  console.log(userData)
 export const userCartdata = () => {
   cartItems.forEach((element) => {
     let storageID = element.productId;
     let customerId = userData[0].id;
-    let timesOrdered = userData[0].timesOrdered+1;
+    let timesOrdered = userData[0].timesOrdered;
     let amount = element.quantity;
-    console.log("custID", customerId,"custIDtimes ord", timesOrdered,"amount",amount,"storageID",storageID);
     axios
       .post(
         `http://localhost:8080/api/v1/shop/save/${customerId}/${storageID}/${amount}/${timesOrdered}`
@@ -80,7 +78,6 @@ export const userCartdata = () => {
         return;
       });
   });
-  userData[0].timesOrdered+=1;
 };
 
 export const checkOutStorage = () => {
