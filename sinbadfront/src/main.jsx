@@ -9,6 +9,7 @@ import Account from "./pages/Account";
 import "./scss/mainSheet.scss";
 import ProductInfo from "./pages/ProductInfo";
 import AddManager from "./pages/AddManager";
+import Manager from "./pages/Manager";
 import Register from "./pages/Register";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -21,6 +22,7 @@ root.render(
       <Route path="/checkout" element={<CheckOut />} />
       <Route path="/manager" element={<AddManager />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/manager" element= {<Manager/>}/>
       <Route path="/login" element={<Account />} />
       <Route path="/productinfo" element={<ProductInfo />} />
     </Routes>

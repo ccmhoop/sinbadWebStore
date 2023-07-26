@@ -27,10 +27,27 @@ public class ShopCart {
     public ShopCart() {
     }
 
-    public ShopCart(int amount, Storage storage, Customer customer) {
+    public ShopCart(int amount, Storage storage, Customer customer, int customerTimesOrdered) {
         this.amount = amount;
         this.storage = storage;
         this.customer = customer;
+        this.customerTimesOrdered = customerTimesOrdered;
+    }
+
+    public Long getShopCartID() {
+        return ShopCartID;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setShopCartID(Long shopCartID) {
+        ShopCartID = shopCartID;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public int getCustomerTimesOrdered() {

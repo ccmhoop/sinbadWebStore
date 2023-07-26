@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -18,6 +19,11 @@ public class ProductController {
     public void saveProducts(@RequestBody Product product) {
         productRepository.save(product);
         System.out.println("Message stored");
+    }
+
+    @GetMapping("{productId}")
+    public Optional<Product> findById(@PathVariable("productId") Long productId) {
+        return productRepository.findById(productId);
     }
 
     @GetMapping("product")
