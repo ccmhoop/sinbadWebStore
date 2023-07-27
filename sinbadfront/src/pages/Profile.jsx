@@ -3,12 +3,13 @@ import StickyBar from "../components/StickyBar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { localUserData, userData } from "../stores/loginState";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import UserInfo from "../components/UserInfo";
 
-
 export default function Profile() {
+  const [userInfo, setUserInfo] = useState({});
+
   return (
     <div>
       <Header />
