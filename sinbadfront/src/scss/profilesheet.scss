@@ -1,0 +1,18 @@
+@import "mainsheet";
+
+
+.user-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.details {
+    margin: 1vw;
+}
+
+
+.info-button {
+    display: flex;
+    margin-left: 90vw;
+}

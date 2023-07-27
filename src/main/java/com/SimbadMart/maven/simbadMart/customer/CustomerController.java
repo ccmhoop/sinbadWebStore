@@ -42,9 +42,13 @@ public class CustomerController {
         return customerRepository.findByCustomerSurname(surname);
     }
 
-
-//    @PostMapping("customer/shop")
-//    public
+    @PostMapping("changeAddress/{id}/{address}")
+    public void changeAddress(@PathVariable("address") String newAddress, @PathVariable("id") Long id) {
+        var customer = customerRepository.findById(id);
+        if (customer.isPresent()) {
+            customer.get().setAddress(newAddress);
+        }
+    }
 
     @PostMapping("login")
     public ResponseEntity<Customer> loginCustomer(@RequestBody LoginRequest loginRequest) {
