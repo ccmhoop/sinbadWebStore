@@ -29,7 +29,6 @@ export default function Register() {
     }));
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -47,60 +46,67 @@ export default function Register() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="customerName"
-          value={user.customerName}
-          onChange={handleChange}
-          placeholder="Customer Name"
-        />
-        <input
-          type="text"
-          name="customerSurname"
-          value={user.customerSurname}
-          onChange={handleChange}
-          placeholder="Customer Surname"
-        />
-        <input
-          type="eMail"
-          name="eMail"
-          value={user.eMail}
-          onChange={handleChange}
-          placeholder="E-mail"
-        />
-        <input
-          type="text"
-          name="address"
-          value={user.address}
-          onChange={handleChange}
-          placeholder="Address"
-        />
-        <input
-          type="date"
-          name="dateOfBirth"
-          value={user.dateOfBirth}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="phone"
-          value={user.phone}
-          onChange={handleChange}
-          placeholder="Phone"
-        />
+    <>
+      <Header />
+      <StickyBar/>
+      <div className="app">
+        <div>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="customerName"
+              value={user.customerName}
+              onChange={handleChange}
+              placeholder="Customer Name"
+            />
+            <input
+              type="text"
+              name="customerSurname"
+              value={user.customerSurname}
+              onChange={handleChange}
+              placeholder="Customer Surname"
+            />
+            <input
+              type="eMail"
+              name="eMail"
+              value={user.eMail}
+              onChange={handleChange}
+              placeholder="E-mail"
+            />
+            <input
+              type="text"
+              name="address"
+              value={user.address}
+              onChange={handleChange}
+              placeholder="Address"
+            />
+            <input
+              type="date"
+              name="dateOfBirth"
+              value={user.dateOfBirth}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="phone"
+              value={user.phone}
+              onChange={handleChange}
+              placeholder="Phone"
+            />
 
-        <input
-          type="password"
-          name="password"
-          value={user.password}
-          onChange={handleChange}
-          placeholder="password"
-        />
+            <input
+              type="password"
+              name="password"
+              value={user.password}
+              onChange={handleChange}
+              placeholder="password"
+            />
 
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <Footer></Footer>
+      </div>
+    </>
   );
 }

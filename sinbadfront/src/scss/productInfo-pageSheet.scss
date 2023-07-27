@@ -1,0 +1,79 @@
+@import "mainSheet";
+
+.productinfo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90em;
+  height: 10em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.productinfo-wrapper {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.product {
+  display: flex;
+  grid-column: 1;
+  grid-row: 1;
+  flex-direction: column;
+  justify-content: left;
+  align-items: start;
+  margin-left: 20vw;
+  margin-top: 1rem;
+}
+
+.buttons-and-amount {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 2rem 2rem 2rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  margin: 0 0 -1rem 0;
+}
+
+.button {
+  margin: 2rem;
+  border: gold solid 0.1rem;
+}
+
+.display-price {
+  text-align: center;
+}
+
+.name {
+  font-size: 2.5rem;
+  border-bottom: gold solid;
+  color: #6528f7;
+}
+
+.price {
+  margin: 0.5em 0 0.5em 0;
+}
+
+.description {
+  color: #bea1fd;
+  font-style: italic;
+}
+
+.quantity {
+  color: #6528f7;
+  font-weight: 500;
+  font-size: 2rem;
+  border-bottom: gold solid 0.1rem;
+}
