@@ -14,7 +14,6 @@ import java.util.Optional;
 @CrossOrigin
 @RequestMapping("/api/v1/storage")
 public class StorageController {
-
     @Autowired
     StorageRepository storageRepository;
 

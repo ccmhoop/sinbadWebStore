@@ -46,11 +46,11 @@ const test = []
           <div className="products-flex">
             {store.products.map((product) => {
           
-              if(test.findIndex((item)=> item.id === product.id) >= 1){
-                return;
-              }
-              test.push(product);
-              console.log(test)
+              // if(test.findIndex((item)=> item.id === product.id) >= 1){
+              //   return;
+              // }
+              // test.push(product);
+              // console.log(test)
               return (   
                 <div key={product.id}>
                   <ListProduct product={product} search={search} />

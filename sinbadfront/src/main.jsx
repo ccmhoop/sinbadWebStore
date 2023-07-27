@@ -22,7 +22,7 @@ root.render(
       <Route path="/checkout" element={<CheckOut />} />
       <Route path="/manager" element={<AddManager />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/manager" element= {<Manager/>}/>
+      <Route path="/man" element= {<Manager/>}/>
       <Route path="/login" element={<Account />} />
       <Route path="/productinfo" element={<ProductInfo />} />
     </Routes>

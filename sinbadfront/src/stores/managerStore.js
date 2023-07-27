@@ -14,8 +14,10 @@ const managerStore = create((set) => ({
       return {
         name: items.productType,
         price: items.productPrice,
-        id: items.storage[0].storageID,
+        id: items.productId,
+        storageId: items.storage[0].storageID,
         amount: items.storage[0].amount,
+        unitPrice: items.unitCost,
       };
     });
     console.log("Fetch Sorted", storage);
