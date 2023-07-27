@@ -94,4 +94,19 @@ public class Customer {
         return role;
     }
 
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
